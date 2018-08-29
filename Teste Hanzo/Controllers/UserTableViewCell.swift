@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import NVActivityIndicatorView
 
 class UserTableViewCell: UITableViewCell {
     
@@ -18,12 +19,15 @@ class UserTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     
+        
     }
 
     func prepare(with user: Users) {
         
+        
+        
         imageUser.layer.borderWidth = 1
-        imageUser.layer.cornerRadius = 25
+        imageUser.layer.cornerRadius = 30
         let imageURL = URL(string: user.image!)
         imageUser.kf.setImage(with: imageURL)
         nameUser.text = user.name

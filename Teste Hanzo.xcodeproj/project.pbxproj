@@ -17,7 +17,6 @@
 		5799E0BF2134979800AB5300 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5799E0BE2134979700AB5300 /* Info.plist */; };
 		5799E0C12134A44C00AB5300 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5799E0C02134A44C00AB5300 /* UserTableViewCell.swift */; };
 		5799E0C42134A78C00AB5300 /* UserJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 5799E0C32134A78C00AB5300 /* UserJSON.json */; };
-		5799E0C82134ADBE00AB5300 /* imgHanzo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5799E0C72134ADBE00AB5300 /* imgHanzo.png */; };
 		DFCD8F2DDA9B9B5D18CB27E7 /* Pods_Teste_Hanzo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BC479A36E403373D0B89F1 /* Pods_Teste_Hanzo.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		5799E0BE2134979700AB5300 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Teste Hanzo/Info.plist"; sourceTree = SOURCE_ROOT; };
 		5799E0C02134A44C00AB5300 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		5799E0C32134A78C00AB5300 /* UserJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = UserJSON.json; path = "Teste Hanzo/UserJSON.json"; sourceTree = SOURCE_ROOT; };
-		5799E0C72134ADBE00AB5300 /* imgHanzo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = imgHanzo.png; path = ../../../../../../Downloads/imgHanzo.png; sourceTree = "<group>"; };
 		68BC479A36E403373D0B89F1 /* Pods_Teste_Hanzo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_Hanzo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86C60A4AD0880A0FAF66663 /* Pods-Teste Hanzo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste Hanzo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Teste Hanzo/Pods-Teste Hanzo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,7 +121,6 @@
 		5799E0C22134A46200AB5300 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				5799E0C72134ADBE00AB5300 /* imgHanzo.png */,
 				5799E0C32134A78C00AB5300 /* UserJSON.json */,
 			);
 			path = Files;
@@ -199,7 +196,6 @@
 			files = (
 				5780142621347A71005DB875 /* LaunchScreen.storyboard in Resources */,
 				5799E0C42134A78C00AB5300 /* UserJSON.json in Resources */,
-				5799E0C82134ADBE00AB5300 /* imgHanzo.png in Resources */,
 				5780142321347A71005DB875 /* Assets.xcassets in Resources */,
 				5799E0BF2134979800AB5300 /* Info.plist in Resources */,
 				5780142121347A6B005DB875 /* Main.storyboard in Resources */,
@@ -218,11 +214,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Teste Hanzo/Pods-Teste Hanzo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -406,10 +404,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KXUSNVLP69;
 				INFOPLIST_FILE = "Teste Hanzo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RenatoGirao.Teste-Hanzo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -425,10 +420,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KXUSNVLP69;
 				INFOPLIST_FILE = "Teste Hanzo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RenatoGirao.Teste-Hanzo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

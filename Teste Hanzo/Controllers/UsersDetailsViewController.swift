@@ -16,7 +16,6 @@ class UsersDetailsViewController: UIViewController {
     @IBOutlet weak var behindView: UIView!
     @IBOutlet weak var lbBio: UILabel!
     @IBOutlet weak var lbAge: UILabel!
-    @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var imageUser: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,15 +24,16 @@ class UsersDetailsViewController: UIViewController {
     }
     
     func configScreen() {
+        
         behindView.layer.cornerRadius = 14
         let imageURL = URL(string: user.image!)
         imageUser.kf.setImage(with: imageURL)
-        imageUser.layer.cornerRadius = 80
+        imageUser.layer.cornerRadius = 18
+        imageUser.layer.borderWidth = 1
         
         title = user.name
-        lbBio.text = ("Biografia: \(String(describing: user.bio ?? "Não há biografia cadastrado para esse usuário" ))")
+        lbBio.text = ("Biografia: \(String(describing: user.bio ?? "Não há biografia cadastrada para esse usuário" ))")
         lbAge.text = ("Aniversário: \(String(describing: user.birthday ?? "Não há aniversário cadastrado para esse usuário"))")
-        lbName.text = ("Nome : \(String(describing: user.name ?? "Não há nome cadastrado para esse usuário"))")
     }
     
     override func viewDidLoad() {
@@ -50,12 +50,7 @@ class UsersDetailsViewController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let birth = dateFormatter.date(from: birthday!)
         
-        print("Birthday \(String(describing: birthday))\n")
-        print("birth \(String(describing: birth))\n")
-        
     }
-    
-
     /*
     // MARK: - Navigation
 

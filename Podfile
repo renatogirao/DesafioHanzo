@@ -9,5 +9,6 @@ target 'Teste Hanzo' do
 	
 	pod 'Alamofire', '~> 4.7'
 	pod 'Kingfisher', '~> 4.0'
+	pod 'NVActivityIndicatorView'
 
 end

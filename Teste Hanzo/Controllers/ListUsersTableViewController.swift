@@ -6,10 +6,12 @@
 //
 
 import UIKit
-import Kingfisher
+
+
 
 class ListUsersTableViewController: UITableViewController {
-
+    
+    
     var users : [Users] = []
     
     override func viewDidLoad() {
@@ -19,12 +21,11 @@ class ListUsersTableViewController: UITableViewController {
 
     func removeDuplicates() {
         
-        
-        
-        
     }
     
     func loadUsers() {
+        
+        
         let fileURL = Bundle.main.url(forResource: "UserJSON.json", withExtension: nil)!
         let jsonData = try! Data(contentsOf: fileURL)
         do {
