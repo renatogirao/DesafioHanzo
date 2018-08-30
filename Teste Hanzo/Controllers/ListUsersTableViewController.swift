@@ -7,24 +7,41 @@
 
 import UIKit
 
-
-
 class ListUsersTableViewController: UITableViewController {
-    
     
     var users : [Users] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+   
         loadUsers()
+        removeDuplicates()
+        
     }
 
     func removeDuplicates() {
         
-    }
-    
-    func loadUsers() {
+        if let path = Bundle.main.path(forResource: "UserJSON", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                
+                if let jsonResult = jsonResult as? Dictionary<String, String> {
+                
+                let idUser = jsonResult["id"] as! [String]
+                    print("ID USER :   \(idUser)")
+                }
+
+            } catch {
+                // handle error
+            }
+        }
         
+        
+    }
+
+    func loadUsers() {
         
         let fileURL = Bundle.main.url(forResource: "UserJSON.json", withExtension: nil)!
         let jsonData = try! Data(contentsOf: fileURL)

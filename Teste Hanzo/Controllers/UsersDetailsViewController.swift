@@ -21,6 +21,7 @@ class UsersDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
     
         configScreen()
+        configNumberFormatter()
     }
     
     func configScreen() {
@@ -33,7 +34,7 @@ class UsersDetailsViewController: UIViewController {
         
         title = user.name
         lbBio.text = ("Biografia: \(String(describing: user.bio ?? "Não há biografia cadastrada para esse usuário" ))")
-        lbAge.text = ("Aniversário: \(String(describing: user.birthday ?? "Não há aniversário cadastrado para esse usuário"))")
+        
     }
     
     override func viewDidLoad() {
@@ -44,11 +45,17 @@ class UsersDetailsViewController: UIViewController {
     }
 
     func configNumberFormatter() {
-        let birthday = user.birthday
-        let dateFormatter = DateFormatter()
+       
+        var userBirthday = user.birthday
         
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let birth = dateFormatter.date(from: birthday!)
+        let newArrayString = userBirthday?.components(separatedBy: "T")
+        let myString = newArrayString![0]
+        let arrayTimeString = myString.components(separatedBy: "-")
+        let year = arrayTimeString[0]
+        let month = arrayTimeString[1]
+        let day = arrayTimeString[2]
+        let birthdayFormatted = "\(day)/\(month)/\(year)"
+        lbAge.text = ("Aniversário: \(String(describing: birthdayFormatted ?? "Não há aniversário cadastrado para esse usuário"))")
         
     }
     /*
