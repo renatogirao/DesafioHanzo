@@ -15,12 +15,12 @@
         <scene sceneID="bqD-tW-GRc">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="ntW-Sd-awe" customClass="ListUsersTableViewController" customModule="Teste_Hanzo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yef-ox-Kxs">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yef-ox-Kxs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="vHM-cQ-pmQ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVs-j7-imk">
@@ -30,7 +30,7 @@
                                         <navigationItem title="Title" id="L9s-H8-Qe1"/>
                                     </items>
                                 </navigationBar>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="imgHanzo" translatesAutoresizingMaskIntoConstraints="NO" id="VY2-Yx-wDK">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHanzo" translatesAutoresizingMaskIntoConstraints="NO" id="VY2-Yx-wDK">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
                                     <color key="backgroundColor" red="0.92941176470588238" green="0.0" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </imageView>
@@ -44,13 +44,18 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="cell" rowHeight="94" id="9dy-Kw-Edt" customClass="UserTableViewCell" customModule="Teste_Hanzo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="184" width="375" height="94"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="cell" rowHeight="94" id="9dy-Kw-Edt" customClass="UserTableViewCell" customModule="Teste_Hanzo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="166" width="375" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9dy-Kw-Edt" id="9J6-bC-eJb">
-                                    <rect key="frame" x="0.0" y="0.0" width="307" height="93.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="94"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53g-vD-hxf">
+                                            <rect key="frame" x="6" y="6" width="362" height="80"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jose da silva" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpB-Gh-ppr">
                                             <rect key="frame" x="110" y="11" width="192" height="36"/>
                                             <constraints>
@@ -91,9 +96,11 @@
                                         <constraint firstAttribute="bottom" secondItem="2gY-33-tHd" secondAttribute="bottom" constant="7.5" id="yD3-68-kOl"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.011764705882352941" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="detailUser" destination="vFZ-9V-Tdo" id="6WV-Lx-G5P"/>
                                     <outlet property="imageUser" destination="2gY-33-tHd" id="Hc3-nH-Ndg"/>
+                                    <outlet property="insideView" destination="53g-vD-hxf" id="1g4-kt-P7M"/>
                                     <outlet property="nameUser" destination="jpB-Gh-ppr" id="jdl-01-fMm"/>
                                     <segue destination="akx-fb-nrV" kind="show" id="Lqw-hu-i5V"/>
                                 </connections>
@@ -156,7 +163,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94975599059420723" green="0.51296821495863876" blue="0.80579096346557078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.0" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bG5-On-m00" firstAttribute="leading" secondItem="KGL-bI-hFI" secondAttribute="leading" constant="8" id="2eG-iD-69a"/>
                             <constraint firstItem="FAD-je-c88" firstAttribute="centerX" secondItem="bG5-On-m00" secondAttribute="centerX" id="OXp-iG-qFD"/>

@@ -7,13 +7,18 @@
 //
 
 import Foundation
+import Foundation
 
-struct Users: Codable {
-    
+struct Users: Codable, Hashable, Equatable {
+    var hashValue: Int { get { return id!.hashValue } }
     let id : String?
     let name : String?
     let image : String?
     let birthday : String?
     let bio : String?
+    
+    func ==(left:Users, right:Users) -> Bool {
+        return left.id == right.id
+    }
     
 }

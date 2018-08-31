@@ -24,6 +24,7 @@ class UsersDetailsViewController: UIViewController {
         configNumberFormatter()
     }
     
+    // Function to configure the design screen
     func configScreen() {
         
         behindView.layer.cornerRadius = 14
@@ -31,23 +32,18 @@ class UsersDetailsViewController: UIViewController {
         imageUser.kf.setImage(with: imageURL)
         imageUser.layer.cornerRadius = 18
         imageUser.layer.borderWidth = 1
-        
         title = user.name
         lbBio.text = ("Biografia: \(String(describing: user.bio ?? "Não há biografia cadastrada para esse usuário" ))")
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configNumberFormatter()
-        
     }
-
+    
+// function to convert the ISO8601 birthday format to normal date
     func configNumberFormatter() {
-       
         var userBirthday = user.birthday
-        
         let newArrayString = userBirthday?.components(separatedBy: "T")
         let myString = newArrayString![0]
         let arrayTimeString = myString.components(separatedBy: "-")
@@ -56,16 +52,5 @@ class UsersDetailsViewController: UIViewController {
         let day = arrayTimeString[2]
         let birthdayFormatted = "\(day)/\(month)/\(year)"
         lbAge.text = ("Aniversário: \(String(describing: birthdayFormatted ?? "Não há aniversário cadastrado para esse usuário"))")
-        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
